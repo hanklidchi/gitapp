@@ -24,11 +24,11 @@ angular.module('gitApp.repos.detail', [
     )
     .controller('RepoDetailCtrl', ['$scope', '$stateParams', 'utils', 
         function($scope, $stateParams, utils) {
-            console.log('hello');
-            console.log($stateParams.repoId);
-            console.log($scope.repos);
+            // console.log('hello');
+            // console.log($stateParams.repoId);
+            // console.log($scope.repos);
             $scope.repo = utils.findById($scope.repos, $stateParams.repoId);
-            console.log($scope.repo);
+            // console.log($scope.repo);
             
         }
     ]);

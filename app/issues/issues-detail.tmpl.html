@@ -1,0 +1,16 @@
+<div style="overflow: auto; height: 300px;">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Created At</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="issue in issues">
+                <td>{{ issue.title }}</td>
+                <td>{{ issue.created_at }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
