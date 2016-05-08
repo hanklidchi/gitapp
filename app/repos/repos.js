@@ -4,7 +4,8 @@
  * Description
  */
 angular.module('gitApp.repos', [
-        'gitApp.models.repos'
+        'gitApp.models.repos',
+        'gitApp.repos.detail'
     ])
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
         $stateProvider

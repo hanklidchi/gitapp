@@ -3,7 +3,7 @@
     <input class="form-control" placeholder="Search Repos" ng-model="reposSearch">
     <button class="btn btn-primary" ng-click="searchRepos()">Search</button>
 </div>
-<div style="overflow: auto; height: 600px;">
+<div style="overflow: auto; height: 300px;">
     <table class="table table-striped">
         <thead>
             <tr>
@@ -16,15 +16,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="repo in repos">
+            <tr ng-repeat="repo in repos" ui-sref="repos.detail({repoId:repo.id})">
                 <td>{{ repo.id }}</td>
                 <td>{{ repo.full_name }}</td>
                 <td>{{ repo.description }}</td>
                 <td>{{ repo.forks_count }}</td>
                 <td>{{ repo.stargazers_count }}</td>
                 <td>{{ repo.open_issues }}</td>
+                <td><button class="btn btn-primary" ng-click="alert('hi')">Details</button></td>
             </tr>
         </tbody>
     </table>
 </div>
-table-striped"
+<div ui-view></div>
