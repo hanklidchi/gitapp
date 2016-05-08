@@ -15,6 +15,7 @@ angular.module('gitApp.repos', [
 
                 controller: ['$scope', '$state', 'ReposModel',
                     function($scope, $state, ReposModel) {
+                    	$scope.reposSearch = 'octokit';
                         // ReposModel.getRepos()
                         //     .then(function(result) {
                         //         $scope.repos = result;
