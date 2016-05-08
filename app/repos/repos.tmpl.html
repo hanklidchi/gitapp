@@ -1,3 +1,4 @@
 <h1>Repos</h1>
-
+<input placeholder="Search Repos" ng-model="reposSearch">
+<button ng-click="searchRepos()">Search</button>
 <div ng-repeat="repo in repos">{{ repo.name }}</div>
