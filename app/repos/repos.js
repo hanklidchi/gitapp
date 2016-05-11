@@ -19,7 +19,7 @@ angular.module('gitApp.repos', [
                                 $scope.reposSearch = 'octokit';
 
                                 $scope.searchRepos = function() {
-                                    ReposModel.getRepos($scope.reposSearch)
+                                    $scope.myPromise = ReposModel.getRepos($scope.reposSearch)
                                         .then(function(result) {
                                             $scope.repos = result;
                                             console.log('result', result);

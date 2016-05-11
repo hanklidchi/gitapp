@@ -1,6 +1,5 @@
-angular.module('gitApp.repos.detail', [
-])
-.config(
+angular.module('gitApp.repos.detail', [])
+    .config(
         ['$stateProvider', '$urlRouterProvider',
             function($stateProvider, $urlRouterProvider) {
                 $stateProvider
@@ -22,13 +21,15 @@ angular.module('gitApp.repos.detail', [
             }
         ]
     )
-    .controller('RepoDetailCtrl', ['$scope', '$stateParams', 'utils', 
-        function($scope, $stateParams, utils) {
-            // console.log('hello');
-            // console.log($stateParams.repoId);
-            // console.log($scope.repos);
+    .controller('RepoDetailCtrl', ['$scope', '$q', '$stateParams', '$state', 'utils',
+        function($scope, $q, $stateParams, $state, utils) {
             $scope.repo = utils.findById($scope.repos, $stateParams.repoId);
-            // console.log($scope.repo);
-            
+            // $stateParams.repo.full_name = $scope.repo.full_name;
+            $stateParams.repoFullName = $scope.repo.full_name;
+            $scope.showIssues = function() {
+                console.log('si');
+                $scope.myPromise = $q.when($state.go('.issues.graphs', $stateParams));
+            };
+
         }
     ]);

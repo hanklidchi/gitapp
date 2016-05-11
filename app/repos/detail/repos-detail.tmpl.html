@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" cg-busy="myPromise">
     <h3>{{ repo.name }}</h3>
     <div class="row marketing">
         <div class="col-md-3">
@@ -9,7 +9,8 @@
             <h4>Stargazers</h4>
             <p>{{ repo.stargazers_count }}</p>
             <h4>Open Issues</h4>
-            <a ui-sref="repos.detail.issues.graphs({repoFullName:repo.full_name})">
+            <!-- <a ui-sref="repos.detail.issues.graphs({repoFullName:repo.full_name})"> -->
+            <a href="" ng-click="showIssues()">
                 <p>{{ repo.open_issues }}</p>
             </a>
         </div>

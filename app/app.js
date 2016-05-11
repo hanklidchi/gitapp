@@ -6,7 +6,8 @@ angular.module('gitApp', [
     'gitApp.repos',
     'gitApp.issues',
     'gitApp.utils.service',
-    'gitApp.utils.d3Service'
+    'gitApp.utils.d3Service',
+    'cgBusy'
 ]).
 config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider
