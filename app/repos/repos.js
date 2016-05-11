@@ -19,11 +19,23 @@ angular.module('gitApp.repos', [
                                 $scope.reposSearch = 'octokit';
 
                                 $scope.searchRepos = function() {
+                                    $scope.searchError = '';
+                                    $scope.repos = {};
                                     $scope.myPromise = ReposModel.getRepos($scope.reposSearch)
                                         .then(function(result) {
                                             $scope.repos = result;
                                             console.log('result', result);
+                                        }, function(error) {
+                                            if (error.status == 404) {
+                                                $scope.searchError = 'No repos with that name.';
+                                                console.log('error', error);
+                                            }
+                                            console.log('error', error);
                                         });
+                                }
+
+                                $scope.setClickedRow = function(index) {
+                                    $scope.selectedRow = index;
                                 }
                             }
                         ]
