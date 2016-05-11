@@ -1,6 +1,6 @@
 angular.module('gitApp.issues', [
         'gitApp.models.issues',
-        'gitApp.directives.barsChart'
+        'gitApp.issues.graphs'
     ])
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
         $stateProvider
