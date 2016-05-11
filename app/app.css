@@ -55,3 +55,26 @@
     background-color:white;
     font-weight:bold;
 }
+
+.slide.ng-leave {
+  position: relative;
+}
+.slide.ng-enter {
+  position: absolute;
+}
+
+.slide.ng-enter {
+  animation: fadeIn 1s;
+}
+.slide.ng-leave {
+  animation: fadeOut .5s;
+}
+
+.generic-repeat.ng-enter {
+  animation: fadeIn .5s;
+}
+
+.generic-repeat.ng-leave {
+  animation: fadeOut .5s;
+}
+;

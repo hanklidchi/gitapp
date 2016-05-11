@@ -17,6 +17,7 @@ angular.module('gitApp.repos', [
                         controller: ['$scope', '$state', 'ReposModel',
                             function($scope, $state, ReposModel) {
                                 $scope.reposSearch = 'octokit';
+                                $scope.reposFilter = '';
 
                                 $scope.searchRepos = function() {
                                     $scope.searchError = '';
@@ -24,13 +25,10 @@ angular.module('gitApp.repos', [
                                     $scope.myPromise = ReposModel.getRepos($scope.reposSearch)
                                         .then(function(result) {
                                             $scope.repos = result;
-                                            console.log('result', result);
                                         }, function(error) {
                                             if (error.status == 404) {
                                                 $scope.searchError = 'No repos with that name.';
-                                                console.log('error', error);
                                             }
-                                            console.log('error', error);
                                         });
                                 }
 

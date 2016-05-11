@@ -1,32 +1,38 @@
 <div class="row">
     <div class="col-md-6" cg-busy="myPromise">
-        <h1>Repos</h1>
-        <div class="form-inline">
-            <input class="form-control" placeholder="Search Repos" ng-model="reposSearch">
-            <button class="btn btn-primary" ng-click="searchRepos()">Search</button>
-        </div>
-        <div style="overflow: auto; height: 300px;">
-            <p ng-show="searchError">{{ searchError }}</p>
-            <table class="table" ng-show="repos.length">
-                <thead>
-                    <tr>
-                        <th>Full Name</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <a href="">
-                        <tr ng-click="setClickedRow($index)" ng-repeat="repo in repos" ui-sref="repos.detail({repoId:repo.id})" ng-class="{'selected':$index == selectedRow}">
-                            <td><a href="">{{ repo.full_name }}</a></td>
-                            <td>{{ repo.description }}</td>
-                        </tr>
-                    </a>
-                </tbody>
-            </table>
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Repos</div>
+            <div class="panel-body">
+                <div class="form-inline">
+                    <input class="form-control" placeholder="Search Repos" ng-model="reposSearch">
+                    <button class="btn btn-primary" ng-click="searchRepos()">Search</button>
+                    <input class="form-control" placeholder="Filter Results" ng-model="reposFilter">
+                </div>
+                <div style="overflow: auto; height: 250px;">
+                    <p ng-show="searchError">{{ searchError }}</p>
+                    <table class="table" ng-show="repos.length">
+                        <thead>
+                            <tr>
+                                <th>Full Name</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <a href="">
+                                <tr class="generic-repeat" ng-repeat="repo in repos | filter:reposFilter track by $index" ui-sref="repos.detail({repoId:repo.id})" ng-class="{'selected':$index == selectedRow}" ng-click="setClickedRow($index)">
+                                    <td><a href="">{{ repo.full_name }}</a></td>
+                                    <td>{{ repo.description }}</td>
+                                </tr>
+                            </a>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
     <div class="col-md-6">
-        <div ui-view></div>
+        <div ui-view class="slide"></div>
     </div>
 </div>
 <div class="row">
