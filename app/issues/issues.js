@@ -8,7 +8,7 @@ angular.module('gitApp.issues', [
 
                 url: '/{repoFullName}',
                 views: {
-                    'q4@repos': {
+                    'q3@repos': {
                         templateUrl: 'issues/issues-detail.tmpl.html',
 
                         resolve: {

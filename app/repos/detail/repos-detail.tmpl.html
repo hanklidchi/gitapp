@@ -9,7 +9,7 @@
             <h4>Stargazers</h4>
             <p>{{ repo.stargazers_count }}</p>
             <h4>Open Issues</h4>
-            <a ui-sref="repos.detail.issues({repoFullName:repo.full_name})">
+            <a ui-sref="repos.detail.issues.graphs({repoFullName:repo.full_name})">
                 <p>{{ repo.open_issues }}</p>
             </a>
         </div>

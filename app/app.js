@@ -5,6 +5,7 @@ angular.module('gitApp', [
     'ui.router',
     'gitApp.repos',
     'gitApp.issues',
+    'gitApp.issues.graphs',
     'gitApp.utils.service'
 ]).
 config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
