@@ -1,7 +1,6 @@
 <div class="row">
     <div class="col-md-6" cg-busy="myPromise">
         <div class="panel panel-default">
-            <!-- Default panel contents -->
             <div class="panel-heading">
                 <h3 class="panel-title">Repos</h3>
             </div>
@@ -12,7 +11,9 @@
                     <input class="form-control" placeholder="Filter Results" ng-model="reposFilter">
                 </div>
                 <div style="overflow: auto; height: 250px;">
+                    <!-- show search error if error returned otherwise hide -->
                     <p ng-show="searchError">{{ searchError }}</p>
+                    <!-- show table only if repos.length greater than 0 -->
                     <table class="table" ng-show="repos.length">
                         <thead>
                             <tr>
@@ -34,6 +35,7 @@
         </div>
     </div>
     <div class="col-md-6">
+        <!-- use slide animation from animate.css -->
         <div ui-view class="slide"></div>
     </div>
 </div>

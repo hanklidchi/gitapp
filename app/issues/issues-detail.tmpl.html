@@ -17,8 +17,13 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <!-- Class set as generic repeat which uses the animate.css
+                            library so that filters show transitions.
+                            Issues filter appended to ng-repeat so that issues can
+                            be searched -->
                             <tr class="generic-repeat" ng-repeat="issue in issues | filter:issuesFilter">
                                 <td>{{ issue.title }}</td>
+                                <!-- date filtered to save some space -->
                                 <td class="col-md-2">{{ issue.created_at | date:'yyyy-MM-dd' }}</td>
                             </tr>
                         </tbody>
