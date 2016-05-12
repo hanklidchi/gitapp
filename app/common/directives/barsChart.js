@@ -33,7 +33,7 @@ angular.module('gitApp.directives.barsChart', [])
                         return ((d.values/maxDataValue)*99) + "%";
                     })
                     .text(function(d) {
-                        return d.key;
+                        return d.values + ' (' + d.key + ')';
                     });
                 //a little of magic: setting it's width based
                 //on the data value (d) 
