@@ -10,12 +10,12 @@ angular.module('gitApp.models.repos', [])
             return result.data;
         }
 
-        function cacheRepos(result) {
+        function getRepos(result) {
             repos = extract(result);
             return repos;
         }
 
         model.getRepos = function(search) {
-            return $http.get(URLS.FETCH + search + '/repos').then(cacheRepos);
+            return $http.get(URLS.FETCH + search + '/repos').then(getRepos);
         }
     }]);
