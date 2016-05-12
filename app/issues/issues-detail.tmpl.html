@@ -1,21 +1,30 @@
 <div class="row">
     <div class="col-md-6">
-        <h2>Open Issues</h2>
-        <div style="overflow: auto; height: 300px;">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Created At</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="issue in issues">
-                        <td>{{ issue.title }}</td>
-                        <td>{{ issue.created_at }}</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Open Issues</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-inline">
+                    <input class="form-control" placeholder="Filter Results" ng-model="issuesFilter">
+                </div>
+                <div style="overflow: auto; height: 250px;">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Created At</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="generic-repeat" ng-repeat="issue in issues | filter:issuesFilter">
+                                <td>{{ issue.title }}</td>
+                                <td class="col-md-2">{{ issue.created_at | date:'yyyy-MM-dd' }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
     <div class="col-md-6">

@@ -1,17 +1,17 @@
-    <div class="panel panel-default" cg-busy="myPromise">
-        <div class="panel-heading">
-            <h3 class="panel-title">{{ repo.name }}</h3>
-        </div>
-        <div class="panel-body">
-            <h4>Description <small>{{ repo.description }}</small></h4>
-            <button class="btn btn-primary" type="button" ng-click="showIssues()">
-                Forks <span class="badge">{{ repo.forks_count }}</span>
-            </button>
-            <button class="btn btn-primary" type="button" ng-click="showIssues()">
-                Stargazers <span class="badge">{{ repo.stargazers_count }}</span>
-            </button>
-            <button class="btn btn-primary" type="button" ng-click="showIssues()">
-                Issues <span class="badge">{{ repo.open_issues }}</span>
-            </button>
-        </div>
+<div class="panel panel-default" cg-busy="myPromise">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ repo.name }}</h3>
     </div>
+    <div class="panel-body">
+        <h4>Description <small>{{ repo.description }}</small></h4>
+        <button class="btn btn-primary" type="button" ng-click="showIssues()">
+            Forks <span class="badge">{{ repo.forks_count }}</span>
+        </button>
+        <button class="btn btn-primary" type="button" ng-click="showIssues()">
+            Stargazers <span class="badge">{{ repo.stargazers_count }}</span>
+        </button>
+        <button class="btn btn-primary" type="button" ng-click="showIssues()">
+            Issues <span class="badge">{{ repo.open_issues }}</span>
+        </button>
+    </div>
+</div>
